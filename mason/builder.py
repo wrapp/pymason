@@ -99,6 +99,10 @@ class FullBuilder(object):
         if method is not None:
             out['method'] = method
 
+        template = params.pop('template')
+        if template is not None:
+            out['template'] = template
+
         for k, v in params.items():
             if v is not None:
                 raise NotImplemented(k)
@@ -153,6 +157,10 @@ class MinimalBuilder(object):
         method = params.pop('method')
         if method is not None:
             out['method'] = method
+
+        template = params.pop('template')
+        if template is not None:
+            out['template'] = template
 
         for k, v in params.items():
             if v is not None:
